@@ -38,6 +38,8 @@ dependencies:
   flutter_randomcolor: ^1.0.14
   dropdown_button2: ^2.1.3
   custom_picker: ^0.0.4
+  flutter_picker: ^2.1.0
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:

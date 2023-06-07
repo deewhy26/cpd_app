@@ -1,7 +1,9 @@
 import 'dart:math';
-
+import 'package:get/get.dart';
+import 'package:cpd_app/controllers/status_sel_controller.dart';
 import 'package:cpd_app/views/widgets/doc_bullet.dart';
 import 'package:cpd_app/views/widgets/doc_title.dart';
+import 'package:cpd_app/views/widgets/status_select.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_randomcolor/flutter_randomcolor.dart';
 
@@ -20,6 +22,7 @@ class _Document1State extends State<Document1> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+    final statusSelectController = Get.put(StatusSelectController());
     // var options = Options(format: Format.hex, colorType: ColorType.blue);
     return Scaffold(
       backgroundColor: Constants.bgColour,
@@ -44,6 +47,24 @@ class _Document1State extends State<Document1> {
         DocBullet(color: Colors.primaries[Random().nextInt(Colors.primaries.length)], text: "Type of Learning Activity"),
         SizedBox(height: height*0.02,),
         LearningAct(),
+        SizedBox(height: height*0.1,),
+        DocBullet(color: Colors.primaries[Random().nextInt(Colors.primaries.length)], text: "Status of Learning"),
+        SizedBox(height: height*0.02,),
+        GestureDetector(
+            onTap: (){statusSelectController.check(0);},
+            child:  Obx(()=>StatusSelect(text: "Completed",isSelected:statusSelectController.sel[0],))),
+        SizedBox(height: height*0.02,),
+        GestureDetector(
+            onTap: (){statusSelectController.check(1);},
+            child:  Obx(()=>StatusSelect(text: "Partially Complete",isSelected:statusSelectController.sel[1],))),
+        SizedBox(height: height*0.02,),
+        GestureDetector(
+            onTap: (){statusSelectController.check(2);},
+            child:  Obx(()=>StatusSelect(text: "Open for editing",isSelected:statusSelectController.sel[2],))),
+        SizedBox(height: height*0.02,),
+        GestureDetector(
+            onTap: (){statusSelectController.check(3);},
+            child:  Obx(()=>StatusSelect(text: "Pending approval",isSelected:statusSelectController.sel[3],))),
       ],
       ),
     ),

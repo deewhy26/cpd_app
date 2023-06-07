@@ -28,7 +28,7 @@ class _LearningActState extends State<LearningAct> {
     "Work Shadowing",
     "Publication of an opinion piece,an audit,case study, research article",
     "Undertaking postgraduate education such as P.G/Masters/diploma/doctorate",
-    "Other"
+    "--Other--"
   ];
 
   String? selectedValue;
