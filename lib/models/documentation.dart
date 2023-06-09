@@ -8,7 +8,14 @@ class Documentation{
   String lg2 = "";
   String iop1 = "";
   String iop2= "";
-  Documentation({required this.tol, required this.sol, required this.credits,required this.lg1, required this.lg2, required this.iop1, required this.iop2 });
+  Documentation({
+    required this.tol,
+    required this.sol,
+    required this.credits,
+    required this.lg1,
+    required this.lg2,
+    required this.iop1,
+    required this.iop2 });
   Map<String, dynamic> toJson() {
     return {
       "tol": tol,
@@ -20,6 +27,7 @@ class Documentation{
       "iop2": iop2,
     };
   }
+
   static Documentation fromSnap(DocumentSnapshot snap){
     var snapshot = snap.data as Map<String, dynamic>;
     return Documentation(
@@ -33,5 +41,6 @@ class Documentation{
 
     );
   }
+
 
 }
