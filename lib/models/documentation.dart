@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Documentation{
   String tol = "";
   String sol = "";
@@ -19,7 +21,7 @@ class Documentation{
     };
   }
   static Documentation fromSnap(DocumentSnapshot snap){
-    var snapshot = snap().data as Map<String, dynamic>;
+    var snapshot = snap.data as Map<String, dynamic>;
     return Documentation(
         tol : snapshot["tol"],
       sol: snapshot["sol"],

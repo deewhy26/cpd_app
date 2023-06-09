@@ -40,6 +40,9 @@ dependencies:
   custom_picker: ^0.0.4
   flutter_picker: ^2.1.0
   get: ^4.6.5
+  firebase_core: ^2.13.1
+  cloud_firestore: ^4.8.0
+  firebase_storage: ^11.2.2
 
 dev_dependencies:
   flutter_test:
