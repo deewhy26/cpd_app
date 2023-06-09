@@ -1,4 +1,5 @@
 import 'package:cpd_app/views/screens/document1.dart';
+import 'package:cpd_app/views/screens/root.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: Document1(),
+      home: RootPage(),
     );
   }
 }
