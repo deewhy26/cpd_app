@@ -1,4 +1,6 @@
 import 'package:cpd_app/views/screens/document1.dart';
+import 'package:cpd_app/views/screens/onboarding.dart';
+import 'package:cpd_app/views/screens/signup.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: RootPage(),
+      home: Onboarding(),
     );
   }
 }

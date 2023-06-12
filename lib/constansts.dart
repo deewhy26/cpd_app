@@ -5,5 +5,6 @@ class Constants {
   static const borderColour = Colors.white;
   static const fontColour = Colors.white;
   static const borderThickness = 1;
+  static const accentColour = Color(0xff252C64);
 
 }

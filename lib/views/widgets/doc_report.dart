@@ -38,7 +38,7 @@ class DocReport extends StatelessWidget {
                     isDoc?"Documents":"Reports",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Constants.fontColour,
+                      color: Colors.white60,
                       fontWeight: FontWeight.w100
                   ),
                 ),
