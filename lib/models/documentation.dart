@@ -14,6 +14,38 @@ class Documentation{
     required this.lg2,
     required this.iop1,
     required this.iop2 });
+
+  static List<Documentation>Documents=[
+    Documentation(
+      tol: '',
+      sol: '',
+      credits: 0,
+      lg1: [""],
+      lg2: "",
+      iop1: "",
+      iop2: ""
+    ),
+    Documentation(
+        tol: '',
+        sol: '',
+        credits: 0,
+        lg1: [""],
+        lg2: "",
+        iop1: "",
+        iop2: ""
+    ),
+    Documentation(
+        tol: '',
+        sol: '',
+        credits: 0,
+        lg1: [""],
+        lg2: "",
+        iop1: "",
+        iop2: ""
+    ),
+
+  ];
+
   Map<String, dynamic> toJson() {
     return {
       "tol": tol,

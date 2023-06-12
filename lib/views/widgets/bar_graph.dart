@@ -37,7 +37,7 @@ class BarGraph extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           image: DecorationImage(
-              image: AssetImage("assets/images/red_gradient_bg.png",),
+              image: AssetImage(credits<30?"assets/images/red_gradient_bg.png":"assets/images/green_gradient_bg.png",),
               fit: BoxFit.fill
           )
       ),
@@ -49,8 +49,8 @@ class BarGraph extends StatelessWidget {
             left: 0,
             right: 0,
             child: Container(
-              height: height*.24,
-              width: width*.85,
+              height: height*.18,
+              width: width*.7,
               child: BarChart(
                   BarChartData(
               maxY:100,
@@ -86,6 +86,17 @@ class BarGraph extends StatelessWidget {
                 ),
             ),
           ),
+          Positioned(
+            top: height*.02,
+              left: width*.06,
+              child: Row(
+                children: [
+                  Text("${credits}/30",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.w500),),
+                  SizedBox(width: width*.02,),
+                  Text("credits",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w400),)
+                ],
+              )
+          )
       ]
       ),
     );
