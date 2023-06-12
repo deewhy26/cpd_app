@@ -1,5 +1,9 @@
 
+import 'package:cpd_app/models/documentation.dart';
+import 'package:cpd_app/models/donut_chart_data.dart';
+import 'package:cpd_app/views/screens/document1.dart';
 import 'package:cpd_app/views/widgets/bar_graph.dart';
+import 'package:cpd_app/views/widgets/donut_chart_tile.dart';
 import 'package:flutter/material.dart';
 
 import '../../constansts.dart';
@@ -30,6 +34,8 @@ class _DashboardState extends State<Dashboard> {
   void _moveToRight() {
     _scrollController.jumpTo(_scrollController.position.maxScrollExtent); // Scroll to the end
   }
+
+  List tolList=Documentation.calculateTopThreePercentages(Documentation.Documents);
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -98,7 +104,14 @@ class _DashboardState extends State<Dashboard> {
                     child: Column(
                       children: [
                         SizedBox(height: height*.04,),
-                        DocReport(isDoc: true),
+                        InkWell(
+                            onTap: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  Document1()),
+                              );
+                            },
+                            child: DocReport(isDoc: true)),
                         SizedBox(height: height*.015,),
                         DocReport(isDoc: false,)
                       ],
@@ -132,47 +145,9 @@ class _DashboardState extends State<Dashboard> {
                 controller: _scrollController,
                 itemCount: 2,
                 itemBuilder: (context, index) {
-                  return Container(
-                    width: width*.9,
-                    height:height*.2 ,
-                    margin: EdgeInsets.all(8),
-                    color: Colors.blue,
-                    child: Center(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: width*.07),
-                            child: Stack(
-                                children: [
-                                  DonutChart(
-                                    radius: width*.15,
-                                    strokeWidth: 12,
-                                    sections: [
-                                      ChartSection(color: Colors.cyan, value: 40),
-                                      ChartSection(color: Colors.yellow, value: 25),
-                                      ChartSection(color: Colors.indigo, value: 10),
-                                      ChartSection(color: Colors.pinkAccent, value: 25),
-                                    ],
-                                  ),
-                                  Positioned(
-                                      top: height*.047,
-                                      left: width*.07,
-                                      width: width*.175,
-                                      child: Text(
-                                        "Type of learning",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.w200
-                                        ),))
-                                ]
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
+                  return DonutChartTile(data: DonutChartData.data[index]);
+
+                }
               ),
             ),
 

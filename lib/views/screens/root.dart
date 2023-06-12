@@ -59,6 +59,7 @@ class _RootPageState extends State<RootPage> {
                           // begin:Alignment.bottomCenter,
                           // end:Alignment.topCenter,
                           colors: [
+                            // Color(0xff401CA2),
                             Color(0xff11FD1A).withOpacity(.3),
                             Constants.bgColour
                           ],

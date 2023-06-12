@@ -9,6 +9,8 @@ import 'package:flutter_randomcolor/flutter_randomcolor.dart';
 
 import '../../constansts.dart';
 import '../widgets/learning_act.dart';
+import '../widgets/next_button.dart';
+import 'document2.dart';
 
 class Document1 extends StatefulWidget {
   const Document1 ({Key? key}) : super(key: key);
@@ -49,7 +51,6 @@ class _Document1State extends State<Document1> {
       child: Column(
       children: [
         SizedBox(height: height*0.05),
-
         Row(
         children: [
           SizedBox(width: width*0.325),
@@ -92,7 +93,8 @@ class _Document1State extends State<Document1> {
         SizedBox(height: height*0.02,),
         Visibility(
             visible: selectedOption=="--Other--"?true:false,
-            child: Container(
+            child:
+            Container(
               height: height*.2,
               width: width*.82,
               decoration: BoxDecoration(
@@ -148,6 +150,16 @@ class _Document1State extends State<Document1> {
         GestureDetector(
             onTap: (){statusSelectController.check(3);},
             child:  Obx(()=>StatusSelect(text: "Pending approval",isSelected:statusSelectController.sel[3],))),
+        SizedBox(height: height*0.05,),
+        InkWell(
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>  Document2()),
+              );
+            },
+            child: NextButton()
+        ),
       ],
       ),
     ),

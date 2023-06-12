@@ -23,7 +23,7 @@ class DocTitle extends StatelessWidget {
       child: Center(
         child: Text(
           "Document",
-          style: TextStyle(color: Constants.fontColour, fontWeight: FontWeight.w300),
+          style: TextStyle(fontSize:17,color: Constants.fontColour, fontWeight: FontWeight.w300),
         ),
       ),
 
